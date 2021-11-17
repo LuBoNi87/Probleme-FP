@@ -66,6 +66,7 @@ namespace setul1
 
         private static void Problema1()
         {
+            Console.Clear();
             Console.WriteLine("Rezolvati ecuatia de gradul 1 cu o necunoscuta: ax+b = 0, unde a si b sunt date de intrare.");
             Console.Write("a: ");
             double a = double.Parse(Console.ReadLine());
@@ -77,7 +78,49 @@ namespace setul1
 
         private static void Problema2()
         {
-            
+            Console.Clear();
+            Console.WriteLine("Rezolvati ecuatia de gradul 2 cu o necunoscuta: ax^2 + bx + c = 0, unde a, b si c sunt date de intrare. Tratati toate cazurile posibile.");
+            Console.Write("a: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.Write("b: ");
+            double b = double.Parse(Console.ReadLine());
+            Console.Write("c: ");
+            double c = double.Parse(Console.ReadLine());
+            if(a !=0 && b!=0 && c!=0)
+            {
+                double delta = b * b - 4 * a * c;
+                if (delta < 0)
+                    Console.WriteLine("Ecuatia nu are solutii reale");
+                else if(delta == 0)
+                    Console.WriteLine($"Ecuatia are 2 solutii reale egale {-b/(2*a)}");
+                else Console.WriteLine($"Ecuatia are solutiile {{{(-b+Math.Sqrt(delta))/(2*a)},{(-b - Math.Sqrt(delta)) / (2 * a)} }}");
+            }
+            else
+            switch (a)
+            {
+                case 0:
+                    double solutie = -c / b;
+                    Console.WriteLine($"solutia este {solutie}");
+                    break;
+                default:
+                    switch (b)
+                    {
+                        case 0:
+                            Console.WriteLine($"solutia este {Math.Sqrt(-c / a)}");
+                            break;
+                        default:
+                            switch (c)
+                            {
+                                case 0:
+                                    Console.WriteLine($"solutia este {{0, {Math.Sqrt(-b / a)}}}");
+                                    break;
+                                default:
+                                    break;
+                            }
+                            break;
+                    }
+                    break;
+            }
         }
 
         private static void Problema3()
