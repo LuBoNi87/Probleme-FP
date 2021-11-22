@@ -38,27 +38,27 @@ namespace setul1
             int nrProblema = int.Parse(Console.ReadLine());
             switch (nrProblema)
             {
-                case 1:  Problema1();break;
-                case 2:  Problema2();break;
-                case 3:  Problema3();break;
-                case 4:  Problema4();break;
-                case 5:  Problema5();break;
-                case 6:  Problema6();break;
-                case 7:  Problema7();break;
-                case 8:  Problema8();break;
-                case 9:  Problema9();break;
-                case 10:Problema10();break;
-                case 11:Problema11();break;
-                case 12:Problema12();break;
-                case 13:Problema13();break;
-                case 14:Problema14();break;
-                case 15:Problema15();break;
-                case 16:Problema16();break;
-                case 17:Problema17();break;
-                case 18:Problema18();break;
-                case 19:Problema19();break;
-                case 20:Problema20();break;
-                case 21:Problema21();break;
+                case 1: Console.Clear(); Problema1();break;
+                case 2: Console.Clear(); Problema2();break;
+                case 3: Console.Clear(); Problema3();break;
+                case 4: Console.Clear(); Problema4();break;
+                case 5: Console.Clear(); Problema5();break;
+                case 6: Console.Clear(); Problema6();break;
+                case 7: Console.Clear(); Problema7();break;
+                case 8: Console.Clear(); Problema8();break;
+                case 9: Console.Clear(); Problema9();break;
+                case 10:Console.Clear();Problema10();break;
+                case 11:Console.Clear();Problema11();break;
+                case 12:Console.Clear();Problema12();break;
+                case 13:Console.Clear();Problema13();break;
+                case 14:Console.Clear();Problema14();break;
+                case 15:Console.Clear();Problema15();break;
+                case 16:Console.Clear();Problema16();break;
+                case 17:Console.Clear();Problema17();break;
+                case 18:Console.Clear();Problema18();break;
+                case 19:Console.Clear();Problema19();break;
+                case 20:Console.Clear();Problema20();break;
+                case 21:Console.Clear();Problema21();break;
                 default:
                     break;
             }
@@ -66,26 +66,19 @@ namespace setul1
 
         private static void Problema1()
         {
-            Console.Clear();
             Console.WriteLine("Rezolvati ecuatia de gradul 1 cu o necunoscuta: ax+b = 0, unde a si b sunt date de intrare.");
-            Console.Write("a: ");
-            double a = double.Parse(Console.ReadLine());
-            Console.Write("b: ");
-            double b = double.Parse(Console.ReadLine());
+            Console.Write("a: ");double a = double.Parse(Console.ReadLine());
+            Console.Write("b: ");double b = double.Parse(Console.ReadLine());
             double solutie = -b / a;
             Console.WriteLine($"solutia este {solutie}");
         }
 
         private static void Problema2()
         {
-            Console.Clear();
             Console.WriteLine("Rezolvati ecuatia de gradul 2 cu o necunoscuta: ax^2 + bx + c = 0, unde a, b si c sunt date de intrare. Tratati toate cazurile posibile.");
-            Console.Write("a: ");
-            double a = double.Parse(Console.ReadLine());
-            Console.Write("b: ");
-            double b = double.Parse(Console.ReadLine());
-            Console.Write("c: ");
-            double c = double.Parse(Console.ReadLine());
+            Console.Write("a: ");double a = double.Parse(Console.ReadLine());
+            Console.Write("b: ");double b = double.Parse(Console.ReadLine());
+            Console.Write("c: ");double c = double.Parse(Console.ReadLine());
             if(a !=0 && b!=0 && c!=0)
             {
                 double delta = b * b - 4 * a * c;
@@ -125,7 +118,15 @@ namespace setul1
 
         private static void Problema3()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Determinati daca n se divide cu k, unde n si k sunt date de intrare. ");
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("k = ");
+            int k = int.Parse(Console.ReadLine());
+            if(n%k==0)
+                Console.WriteLine($"Numarul {n} se divide cu {k}");
+            else
+                Console.WriteLine($"Numarul {n} nu se divide cu {k}");
         }
 
         private static void Problema4()
