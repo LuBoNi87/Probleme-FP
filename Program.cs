@@ -313,16 +313,55 @@ namespace setul1
             int b = int.Parse(Console.ReadLine());
             Console.Write("c = ");
             int c = int.Parse(Console.ReadLine());
+            if (a > b)
+                Swap(ref a, ref b);
+            if (a > c)
+                Swap(ref a, ref c);
+            if (b > c)
+                Swap(ref b, ref c);
+            Console.WriteLine($"{a}, {b}, {c}.");
         }
 
         private static void Problema16()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Se dau 5 numere. Sa se afiseze in ordine crescatoare. (nu folositi tablouri)");
+            Console.Write("a = ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b = ");
+            int b = int.Parse(Console.ReadLine());
+            Console.Write("c = ");
+            int c = int.Parse(Console.ReadLine());
+            Console.Write("d = ");
+            int d = int.Parse(Console.ReadLine());
+            Console.Write("e = ");
+            int e = int.Parse(Console.ReadLine());
+            if (a > b)
+                Swap(ref a, ref b);
+            if (a > c)
+                Swap(ref a, ref c);
+            if (a > d)
+                Swap(ref a, ref d);
+            if (a > e)
+                Swap(ref a, ref e);
+            if (b > c)
+                Swap(ref b, ref c);
+            if (b > d)
+                Swap(ref b, ref d);
+            if (b > e)
+                Swap(ref b, ref e);
+            if (c > d)
+                Swap(ref c, ref d);
+            if (c > e)
+                Swap(ref c, ref e);
+            if (d > e)
+                Swap(ref d, ref e);
+            Console.WriteLine($"{a}, {b}, {c}, {d}, {e}.");
         }
 
         private static void Problema17()
         {
-            throw new NotImplementedException();
+            Console.Write("a = ");
+            int a = int.Parse(Console.ReadLine());
         }
 
         private static void Problema18()
