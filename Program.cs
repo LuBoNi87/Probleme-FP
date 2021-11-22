@@ -253,7 +253,18 @@ namespace setul1
 
         private static void Problema12()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Determinati cate numere integi divizibile cu n se afla in intervalul [a, b].");
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("a = ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b = ");
+            int b = int.Parse(Console.ReadLine());
+            int count = 0;
+            for (int i = a; i <= b; i++)
+                if (i % n == 0)
+                    count++;
+            Console.WriteLine($"In intervalul [{a},{b}] sunt {count} numere divizibile cu {n}");
         }
 
         private static void Problema13()
