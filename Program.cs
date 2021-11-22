@@ -213,7 +213,15 @@ namespace setul1
 
         private static void Problema9()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Afisati toti divizorii numarului n. ");
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            for(int i = 1; i<=n; i++)
+                if (n % i == 0)
+                    if (i<n)
+                        Console.Write($"{i}, ");
+                    else
+                        Console.Write($"{i}.\n");
         }
 
         private static void Problema10()
