@@ -131,12 +131,18 @@ namespace setul1
 
         private static void Problema4()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Detreminati daca un an y este an bisect.");
+            Console.Write("Anul: ");
+            int anul = int.Parse(Console.ReadLine());
+            if((anul % 4 == 0 && anul % 100 != 0) || anul % 400 == 0)
+                Console.WriteLine($"Anul {anul} este un an bisect.");
+            else
+                Console.WriteLine($"Anul {anul} nu este un an bisect.");
         }
 
         private static void Problema5()
         {
-            throw new NotImplementedException();
+            
         }
 
         private static void Problema6()
