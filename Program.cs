@@ -269,12 +269,22 @@ namespace setul1
 
         private static void Problema13()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Determianti cati ani bisecti sunt intre anii y1 si y2.");
+            Console.Write("y1 = ");
+            int y1 = int.Parse(Console.ReadLine());
+            Console.Write("y2 = ");
+            int y2 = int.Parse(Console.ReadLine());
+            int count = 0;
+            for (int i = y1; i <= y2; i++)
+                if ((i % 4 == 0 && i % 100 != 0) || i % 400 == 0)
+                    count++;
+            Console.WriteLine($"Intre anii {y1} si {y2} sunt {count} ani bisecti");
         }
 
         private static void Problema14()
         {
-            throw new NotImplementedException();
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
         }
 
         private static void Problema15()
