@@ -241,7 +241,14 @@ namespace setul1
 
         private static void Problema11()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Afisati in ordine inversa cifrele unui numar n.");
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            while(n > 0)
+            {
+                Console.Write($"{n%10} ");
+                n /= 10;
+            }
         }
 
         private static void Problema12()
