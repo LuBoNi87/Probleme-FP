@@ -283,13 +283,36 @@ namespace setul1
 
         private static void Problema14()
         {
+            Console.WriteLine("Determianti daca un numar n este palindrom. (un numar este palindrom daca citit invers obtinem un numar egal cu el, de ex. 121 sau 12321.");
             Console.Write("n = ");
             int n = int.Parse(Console.ReadLine());
+            int o = oglindit(n);
+            if(o==n)
+                Console.WriteLine($"Numarul {n} este palindrom");
+            else
+                Console.WriteLine($"Numarul {n} nu este palindrom");
+        }
+
+        private static int oglindit(int n)
+        {
+            int o = 0;
+            while(n>0)
+            {
+                o = o * 10 + n % 10;
+                n /= 10;
+            }
+            return o;
         }
 
         private static void Problema15()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Se dau 3 numere. Sa se afiseze in ordine crescatoare. ");
+            Console.Write("a = ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b = ");
+            int b = int.Parse(Console.ReadLine());
+            Console.Write("c = ");
+            int c = int.Parse(Console.ReadLine());
         }
 
         private static void Problema16()
