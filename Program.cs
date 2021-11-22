@@ -142,7 +142,22 @@ namespace setul1
 
         private static void Problema5()
         {
-            
+            Console.WriteLine("Extrageti si afisati a k-a cifra de la sfarsitul unui numar. Cifrele se numara de la dreapta la stanga.");
+            Console.Write("Numarul: ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("k = ");
+            int k = int.Parse(Console.ReadLine());
+            int kk = k;
+            while (n > 0)
+            {
+                k--;
+                if (k == 0)
+                {
+                    Console.WriteLine($"A {kk}-a cifra este {n % 10}");
+                    break;
+                }
+                n /= 10;
+            }
         }
 
         private static void Problema6()
