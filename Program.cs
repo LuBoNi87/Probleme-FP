@@ -360,8 +360,40 @@ namespace setul1
 
         private static void Problema17()
         {
+            Console.WriteLine("Determianti cel mai mare divizor comun si cel mai mic multiplu comun a doua numere. Folositi algoritmul lui Euclid.");
             Console.Write("a = ");
             int a = int.Parse(Console.ReadLine());
+            Console.Write("b = ");
+            int b = int.Parse(Console.ReadLine());
+            int cmmdc = Cmmdc(a, b);
+            int cmmmc = Cmmmc(a, b);
+            Console.WriteLine($"Cel mai mare divizor comun este {cmmdc}\nCel mai mic multiplu comun este {cmmmc}");
+        }
+
+        private static int Cmmmc(int a, int b)
+        {
+            int n = a;
+            int m = b;
+            while (n != m)
+            {
+                if (n < m)
+                    n += a;
+                else if (n > m)
+                    m += b;
+            }
+            return n;
+        }
+
+        private static int Cmmdc(int a, int b)
+        {
+            while(a != b)
+            {
+                if (a > b)
+                    a -= b;
+                else if (a < b)
+                    b -= a;
+            }
+            return a;
         }
 
         private static void Problema18()
