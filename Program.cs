@@ -162,7 +162,17 @@ namespace setul1
 
         private static void Problema6()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Determinati daca trei numere pozitive a, b si c pot fi lungimile laturilor unui triunghi.");
+            Console.Write("a = ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b = ");
+            int b = int.Parse(Console.ReadLine());
+            Console.Write("c = ");
+            int c = int.Parse(Console.ReadLine());
+            if(a+b>c && a+c > b && b+c>a)
+                Console.WriteLine($"Numerele {a}, {b} si {c} pot fi lungimile laturilor unui triunghi");
+            else    
+                Console.WriteLine($"Numerele {a}, {b} si {c} nu pot fi lungimile laturilor unui triunghi");    
         }
 
         private static void Problema7()
