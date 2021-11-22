@@ -8,7 +8,7 @@ namespace setul1
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Console.WriteLine(@"1. Rezolvati ecuatia de gradul 1 cu o necunoscuta: ax+b = 0, unde a si b sunt date de intrare. 
 2. Rezolvati ecuatia de gradul 2 cu o necunoscuta: ax^2 + bx + c = 0, unde a, b si c sunt date de intrare. Tratati toate cazurile posibile. 
@@ -226,7 +226,17 @@ namespace setul1
 
         private static void Problema10()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Test de primalitate: determinati daca un numar n este prim.");
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            bool prim = true;
+            for (int i = 2; i <= Math.Sqrt(n); i++)
+                if (n % i == 0)
+                    prim = false;
+            if(prim)
+                Console.WriteLine($"Numarul {n} este prim");
+            else
+                Console.WriteLine($"Numarul {n} nu este prim");
         }
 
         private static void Problema11()
