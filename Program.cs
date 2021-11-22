@@ -177,12 +177,38 @@ namespace setul1
 
         private static void Problema7()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("(Swap) Se dau doua variabile numerice a si b ale carori valori sunt date de intrare. Se cere sa se inverseze valorile lor. ");
+            Console.Write("a = ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b = ");
+            int b = int.Parse(Console.ReadLine());
+            Swap(ref a, ref b);
+            Console.WriteLine($"a = {a}\nb = {b}");
+        }
+
+        private static void Swap(ref int a, ref int b)
+        {
+            int temp = a;
+            a = b;
+            b = temp;
         }
 
         private static void Problema8()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("(Swap restrictionat) Se dau doua variabile numerice a si b ale carori valori sunt date de intrare. Se cere sa se inverseze valorile lor fara a folosi alte variabile suplimentare.");
+            Console.Write("a = ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("b = ");
+            int b = int.Parse(Console.ReadLine());
+            Swap_restrictionat(ref a, ref b);
+            Console.WriteLine($"a = {a}\nb = {b}");
+        }
+
+        private static void Swap_restrictionat(ref int a, ref int b)
+        {
+            a = a + b;
+            b = a - b;
+            a = a - b;
         }
 
         private static void Problema9()
