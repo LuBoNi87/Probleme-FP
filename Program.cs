@@ -398,12 +398,33 @@ namespace setul1
 
         private static void Problema18()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Afisati descompunerea in factori primi ai unui numar n.  De ex. pentru n = 1176 afisati 2^3 x 3^1 x 7^2.");
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            int i = 2;
+            while(n > 1)
+            {
+                int nr = 0;
+                while(n%i==0)
+                {
+                    n /= i;
+                    nr++;
+                }
+                if (nr > 0)
+                {
+                    if (n == 1)
+                        Console.WriteLine($"{i}^{nr}.");
+                    else Console.Write($"{i}^{nr} x ");
+                }
+                i++;
+            }
         }
 
         private static void Problema19()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("");
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
         }
 
         private static void Problema20()
