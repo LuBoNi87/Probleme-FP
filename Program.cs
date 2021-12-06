@@ -497,8 +497,28 @@ namespace setul1
         private static void Problema21()
         {
             Console.WriteLine("Ghiciti un numar intre 1 si 1024 prin intrebari de forma \"numarul este mai mare sau egal decat x ?\".");
-            Console.Write("n = ");
-            int n = int.Parse(Console.ReadLine());
+            Random rand = new Random();
+            int n = rand.Next(1, 1025);
+            int x = int.Parse(Console.ReadLine());
+            if (n == x)
+                Console.WriteLine("Ai ghicit!");
+            else Console.Write($"Numarul este mai mare sau egal decat {x} ?\n");
+            if (n>x)
+                Console.WriteLine("Da!");
+            else Console.WriteLine("Nu!");
+            while (x != n)
+            {
+                x = int.Parse(Console.ReadLine());
+                if (n == x)
+                {
+                    Console.WriteLine("Ai ghicit!");
+                    break;
+                }
+                Console.WriteLine($"Numarul este mai mare decat {x}?");
+                if (n > x)
+                    Console.WriteLine("Da!");
+                else Console.WriteLine("Nu!");
+            }
         }
     }
 }
