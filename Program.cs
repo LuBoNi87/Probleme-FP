@@ -206,9 +206,9 @@ namespace setul1
 
         private static void Swap_restrictionat(ref int a, ref int b)
         {
-            a = a + b;
+            a += b;
             b = a - b;
-            a = a - b;
+            a -= b;
         }
 
         private static void Problema9()
@@ -286,14 +286,14 @@ namespace setul1
             Console.WriteLine("Determianti daca un numar n este palindrom. (un numar este palindrom daca citit invers obtinem un numar egal cu el, de ex. 121 sau 12321.");
             Console.Write("n = ");
             int n = int.Parse(Console.ReadLine());
-            int o = oglindit(n);
+            int o = Oglindit(n);
             if(o==n)
                 Console.WriteLine($"Numarul {n} este palindrom");
             else
                 Console.WriteLine($"Numarul {n} nu este palindrom");
         }
 
-        private static int oglindit(int n)
+        private static int Oglindit(int n)
         {
             int o = 0;
             while(n>0)
@@ -422,7 +422,7 @@ namespace setul1
 
         private static void Problema19()
         {
-            Console.WriteLine("");
+            Console.WriteLine("Determinati daca un numar e format doar cu 2 cifre care se pot repeta. De ex. 23222 sau 9009000 sunt astfel de numere, pe cand 593 si 4022 nu sunt.");
             Console.Write("n = ");
             int n = int.Parse(Console.ReadLine());
             int ncopy = n;
@@ -447,34 +447,58 @@ namespace setul1
 
         private static void Problema20()
         {
-            int m = 13;
-            int n = 30;
-            double d;
-
-            d = (double)m / n;
-            Console.WriteLine(d);
-
-            double fract = d - Math.Truncate(d);
-
-            int maxDecimal = 6;
-            while (maxDecimal > 0 && fract != 0)
+            Console.WriteLine("Afisati fractia m/n in format zecimal, cu perioada intre paranteze (daca e cazul).");
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write("m = ");
+            int m = int.Parse(Console.ReadLine());
+            int parteInt, parteFract;
+            parteInt = n / m;
+            parteFract = n % m;
+            Console.Write($"{parteInt}");
+            if (parteFract > 0)
+                Console.Write(",");
+            int rest;
+            List<int> resturi = new List<int>();
+            List<int> cifre = new List<int>();
+            resturi.Add(parteFract);
+            bool periodic = false;
+            rest = parteFract * 10 % m;
+            while (rest > 0)
             {
-                // fract = 0.43
-                int cifraZecimala;
-                cifraZecimala = (int)Math.Truncate(fract * 10);
-                Console.WriteLine($"{cifraZecimala} ");
-
-
-                fract = fract * 10 - Math.Truncate(fract * 10);
-
-
-                maxDecimal--;
+                cifre.Add(parteFract * 10 / m);
+                rest = parteFract * 10 % m;
+                if (!resturi.Contains(rest))
+                    resturi.Add(rest);
+                else
+                {
+                    periodic = true;
+                    break;
+                }
+                parteFract = rest;
+            }
+            if (periodic == false)
+                for (int i = 0; i < cifre.Count; i++)
+                    Console.Write($"{cifre[i]}");
+            else
+            {
+                for (int i = 0; i < resturi.Count; i++)
+                {
+                    if (resturi[i] == rest)
+                    {
+                        Console.Write("(");
+                    }
+                    Console.Write(cifre[i]);
+                }
+                Console.WriteLine(")");
             }
         }
 
         private static void Problema21()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Ghiciti un numar intre 1 si 1024 prin intrebari de forma \"numarul este mai mare sau egal decat x ?\".");
+            Console.Write("n = ");
+            int n = int.Parse(Console.ReadLine());
         }
     }
 }
