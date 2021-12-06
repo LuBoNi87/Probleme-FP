@@ -425,11 +425,51 @@ namespace setul1
             Console.WriteLine("");
             Console.Write("n = ");
             int n = int.Parse(Console.ReadLine());
+            int ncopy = n;
+            int a = 0; 
+            int b = 0;
+            bool ok = true;
+            while(n>0)
+            {
+                if (a == 0)
+                    a = n % 10;
+                else if (b == 0)
+                    b = n % 10;
+                if (n % 10 != a && n % 10 != b)
+                    ok = false;
+                n /= 10;
+            }
+            if(ok)
+                Console.WriteLine($"Numarul {ncopy} e format doar cu 2 cifre");
+            else
+                Console.WriteLine($"Numarul {ncopy} NU e format doar cu 2 cifre");
         }
 
         private static void Problema20()
         {
-            throw new NotImplementedException();
+            int m = 13;
+            int n = 30;
+            double d;
+
+            d = (double)m / n;
+            Console.WriteLine(d);
+
+            double fract = d - Math.Truncate(d);
+
+            int maxDecimal = 6;
+            while (maxDecimal > 0 && fract != 0)
+            {
+                // fract = 0.43
+                int cifraZecimala;
+                cifraZecimala = (int)Math.Truncate(fract * 10);
+                Console.WriteLine($"{cifraZecimala} ");
+
+
+                fract = fract * 10 - Math.Truncate(fract * 10);
+
+
+                maxDecimal--;
+            }
         }
 
         private static void Problema21()
